@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umesh Prasad Yadav | Official Website</title>
+<meta name="description" content="Official website of Umesh Prasad Yadav, Nonaura, East Champaran, Bihar.">
+<style>
+:root {
+  --blue: #16438F;
+  --green: #27C96F;
+  --white: #FFFFFF;
+  --light: #F2F6FC;
+  --dark: #10264B;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  color: #24334B;
+  background: var(--light);
+  line-height: 1.6;
+}
+a { text-decoration: none; }
+header {
+  background: var(--blue);
+  color: white;
+  padding: 15px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.logo {
+  font-size: 19px;
+  font-weight: bold;
+}
+.logo span { color: var(--green); }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+nav a {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+nav a:hover { color: var(--green); }
+.hero {
+  background: linear-gradient(135deg, #16438F, #0E326F);
+  color: white;
+  padding: 65px 7%;
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  align-items: center;
+  gap: 35px;
+}
+.badge {
+  display: inline-block;
+  color: #092C63;
+  background: var(--green);
+  border-radius: 30px;
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.hero h1 {
+  font-size: clamp(34px, 5vw, 55px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+.hero p { color: #E4ECFA; }
+.btn {
+  display: inline-block;
+  background: var(--green);
+  color: #07351D;
+  padding: 12px 19px;
+  margin-top: 23px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.btn.secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  margin-left: 8px;
+}
+.profile {
+  border: 2px solid #27C96F;
+  border-radius: 18px;
+  padding: 30px 15px;
+  text-align: center;
+  background: #FFFFFF12;
+}
+.profile-icon {
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--blue);
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  font-weight: bold;
+  margin: auto auto 15px;
+  border: 5px solid white;
+}
+.profile h2 { font-size: 21px; }
+.profile p { font-size: 13px; margin-top: 7px; }
+section { padding: 60px 7%; }
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.heading span {
+  color: #16834A;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.heading h2 {
+  color: var(--blue);
+  font-size: 30px;
+  margin-top: 6px;
+}
+.about-grid, .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.box, .card, form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 22px #16438F12;
+}
+.box h3, .card h3, form h3 {
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.services {
+  background: white;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.card {
+  border-bottom: 4px solid var(--green);
+}
+.icon { font-size: 30px; }
+.card p { font-size: 14px; color: #657189; }
+.updates {
+  background: var(--blue);
+  color: white;
+  text-align: center;
+}
+.updates h2 { font-size: 30px; margin-bottom: 12px; }
+.updates p { color: #E1EAF8; }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.gallery div {
+  background: linear-gradient(135deg, var(--blue), #087E8B);
+  color: white;
+  min-height: 130px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  border-bottom: 4px solid var(--green);
+}
+label {
+  display: block;
+  margin: 12px 0 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D6DEEA;
+  border-radius: 6px;
+  font: inherit;
+}
+textarea { min-height: 110px; }
+button {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+.small {
+  font-size: 12px;
+  color: #69758A;
+  margin-top: 10px;
+}
+footer {
+  background: #10264B;
+  color: white;
+  text-align: center;
+  padding: 30px 6%;
+}
+footer p { font-size: 13px; color: #CBD6E7; margin-top: 6px; }
+@media(max-width: 700px) {
+  header { justify-content: center; text-align: center; }
+  nav { justify-content: center; gap: 12px; }
+  .hero { grid-template-columns: 1fr; padding: 45px 6%; }
+  .profile { max-width: 340px; width: 100%; margin: auto; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  section { padding: 45px 6%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#home" style="color:white">
+    UMESH PRASAD <span>YADAV</span>
+  </a>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Public Service</a>
+    <a href="#news">Updates</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <span class="badge">PUBLIC SERVICE • COMMUNITY DEVELOPMENT</span>
+    <h1>Working Together for a Better Tomorrow</h1>
+    <p>Welcome to the official website of Umesh Prasad Yadav. Explore community initiatives, public activities and ways to connect.</p>
+    <a class="btn" href="#services">Explore Public Service</a>
+    <a class="btn secondary" href="#contact">Contact Us</a>
+  </div>
+  <div class="profile">
+    <div class="profile-icon">UY</div>
+    <h2>Umesh Prasad Yadav</h2>
+    <p>Nonaura, East Champaran, Bihar</p>
+    <p>Community • Service • Development</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="heading">
+    <span>Introduction</span>
+    <h2>About Umesh Prasad Yadav</h2>
+  </div>
+  <div class="about-grid">
+    <div class="box">
+      <h3>A Commitment to Public Service</h3>
+      <p>This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added using verified information.</p>
+    </div>
+    <div class="box">
+      <h3>Our Focus</h3>
+      <p>Community engagement, understanding public concerns, sharing useful information and supporting local development.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="heading">
+    <span>Community</span>
+    <h2>Public Service</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Public Support</h3>
+      <p>Information and assistance for community members.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🏘️</div>
+      <h3>Local Development</h3>
+      <p>Updates about local initiatives and development activities.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📢</div>
+      <h3>Public Updates</h3>
+      <p>Verified information about meetings, events and activities.</p>
+    </div>
+  </div>
+</section>
+
+<section class="updates" id="news">
+  <h2>News & Activities</h2>
+  <p>Verified news, event announcements and community updates will appear here.</p>
+</section>
+
+<section id="gallery">
+  <div class="heading">
+    <span>Memories</span>
+    <h2>Photo & Video Gallery</h2>
+  </div>
+  <div class="gallery">
+    <div>Community Activities</div>
+    <div>Public Meetings</div>
+    <div>Social Events</div>
+  </div>
+  <p class="small">Sample gallery sections. Add approved photographs when available.</p>
+</section>
+
+<section id="contact">
+  <div class="heading">
+    <span>Connect</span>
+    <h2>Contact & Public Suggestions</h2>
+  </div>
+  <div class="contact-grid">
+    <form id="messageForm">
+      <h3>Prepare a Message</h3>
+      <label for="name">Your Name</label>
+      <input id="name" required maxlength="100" placeholder="Enter your name">
+      <label for="topic">Topic</label>
+      <select id="topic">
+        <option>General Enquiry</option>
+        <option>Public Suggestion</option>
+        <option>Community Activity</option>
+      </select>
+      <label for="message">Message</label>
+      <textarea id="message" required maxlength="2000" placeholder="Write your message"></textarea>
+      <button class="btn" type="submit">Prepare Message</button>
+      <p class="small">This demo prepares a text file. It does not send or store your message online.</p>
+    </form>
+    <div class="box">
+      <h3>Contact Information</h3>
+      <p>Location: Nonaura, East Champaran, Bihar, India</p>
+      <p style="margin-top:12px">Phone: Add verified contact number</p>
+      <p style="margin-top:12px">Email: Add verified email address</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>Umesh Prasad Yadav</strong>
+  <p>Public Service • Community Engagement • Development</p>
+  <p>© <span id="year"></span> | Official Website</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("messageForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const content =
+    "Name: " + document.getElementById("name").value.trim() + "\n" +
+    "Topic: " + document.getElementById("topic").value + "\n\n" +
+    "Message: " + document.getElementById("message").value.trim();
+  const blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "public-message.txt";
+  link.click();
+  URL.revokeObjectURL(link.href);
+  alert("A text file has been prepared. Your message has not been sent.");
+});
+</script>
+
+</body>
+  </html>
