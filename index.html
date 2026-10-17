@@ -239,7 +239,16 @@ footer p { font-size: 13px; color: #CBD6E7; margin-top: 6px; }
     <a href="#contact">Contact</a>
   </nav>
 </header>
+<div style="text-align:right;padding:10px 6%;background:#fff;">
+  <label for="languageSelect" style="display:inline;margin-right:8px;">
+    Language / भाषा:
+  </label>
 
+  <select id="languageSelect" style="width:auto;padding:8px;">
+    <option value="en">English</option>
+    <option value="hi">हिंदी</option>
+  </select>
+</div>
 <main>
 <section class="hero" id="home">
   <div>
@@ -354,20 +363,526 @@ footer p { font-size: 13px; color: #CBD6E7; margin-top: 6px; }
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const translations = {
+  en: {
+    home: "Home",
+    about: "About",
+    services: "Public Service",
+    news: "Updates",
+    gallery: "Gallery",
+    contact: "Contact",
+    badge: "PUBLIC SERVICE • COMMUNITY DEVELOPMENT",
+    headline: "Working Together for a Better Tomorrow",
+    intro: "Welcome to the official website of Umesh Prasad Yadav. Explore community initiatives, public activities and ways to connect.",
+    explore: "Explore Public Service",
+    contactUs: "Contact Us",
+    aboutTitle: "About Umesh Prasad Yadav",
+    introduction: "Introduction",
+    commitment: "A Commitment to Public Service",
+    aboutText: "This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added using verified information.",
+    focus: "Our Focus",
+    focusText: "Community engagement, understanding public concerns, sharing useful information and supporting local development.",
+    community: "Community",
+    publicService: "Public Service",
+    support: "Public Support",
+    supportText: "Information and assistance for community members.",
+    development: "Local Development",
+    developmentText: "Updates about local initiatives and development activities.",
+    publicUpdates: "Public Updates",
+    publicUpdatesText: "Verified information about meetings, events and activities.",
+    activities: "News & Activities",
+    newsText: "Verified news, event announcements and community updates will appear here.",
+    memories: "Memories",
+    galleryTitle: "Photo & Video Gallery",
+    activitiesGallery: "Community Activities",
+    meetings: "Public Meetings",
+    events: "Social Events",
+    galleryNote: "Sample gallery sections. Add approved photographs when available.",
+    connect: "Connect",
+    contactTitle: "Contact & Public Suggestions",
+    prepare: "Prepare a Message",
+    yourName: "Your Name",
+    enterName: "Enter your name",
+    topic: "Topic",
+    general: "General Enquiry",
+    suggestion: "Public Suggestion",
+    activity: "Community Activity",
+    message: "Message",
+    writeMessage: "Write your message",
+    prepareButton: "Prepare Message",
+    formNote: "This demo prepares a text file. It does not send or store your message online.",
+    contactInfo: "Contact Information",
+    location: "Location: Nonaura, East Champaran, Bihar, India",
+    phone: "Phone: Add verified contact number",
+    email: "Email: Add verified email address",
+    footer: "Public Service • Community Engagement • Development",
+    official: "Official Website"
+  },
+
+  hi: {
+    home: "होम",
+    about: "परिचय",
+    services: "जनसेवा",
+    news: "अपडेट",
+    gallery: "गैलरी",
+    contact: "संपर्क",
+    badge: "जनसेवा • सामुदायिक विकास",
+    headline: "बेहतर कल के लिए मिलकर काम करें",
+    intro: "उमेश प्रसाद यादव की आधिकारिक वेबसाइट पर आपका स्वागत है। यहाँ सामाजिक गतिविधियों, जनसेवा और संपर्क की जानकारी प्राप्त करें।",
+    explore: "जनसेवा देखें",
+    contactUs: "संपर्क करें",
+    aboutTitle: "उमेश प्रसाद यादव का परिचय",
+    introduction: "परिचय",
+    commitment: "जनसेवा के प्रति प्रतिबद्धता",
+    aboutText: "इस वेबसाइट पर उमेश प्रसाद यादव, उनकी सार्वजनिक गतिविधियों और सामुदायिक पहलों की जानकारी उपलब्ध होगी। सत्यापित जानकारी के आधार पर विस्तृत परिचय जोड़ा जा सकता है।",
+    focus: "हमारा उद्देश्य",
+    focusText: "समुदाय से जुड़ना, जनसमस्याओं को समझना, उपयोगी जानकारी साझा करना और स्थानीय विकास में सहयोग करना।",
+    community: "समुदाय",
+    publicService: "जनसेवा",
+    support: "जनसहयोग",
+    supportText: "समुदाय के लोगों के लिए जानकारी और सहायता।",
+    development: "स्थानीय विकास",
+    developmentText: "स्थानीय पहलों और विकास कार्यों की जानकारी।",
+    publicUpdates: "जनता के लिए अपडेट",
+    publicUpdatesText: "बैठकों, कार्यक्रमों और गतिविधियों की सत्यापित जानकारी।",
+    activities: "समाचार एवं गतिविधियाँ",
+    newsText: "यहाँ सत्यापित समाचार, कार्यक्रमों की घोषणाएँ और सामाजिक गतिविधियों की जानकारी दिखाई जाएगी।",
+    memories: "यादें",
+    galleryTitle: "फोटो एवं वीडियो गैलरी",
+    activitiesGallery: "सामुदायिक गतिविधियाँ",
+    meetings: "जनसभाएँ",
+    events: "सामाजिक कार्यक्रम",
+    galleryNote: "यह गैलरी का नमूना है। उपलब्ध होने पर स्वीकृत तस्वीरें जोड़ें।",
+    connect: "जुड़ें",
+    contactTitle: "संपर्क एवं जनसुझाव",
+    prepare: "संदेश तैयार करें",
+    yourName: "आपका नाम",
+    enterName: "अपना नाम लिखें",
+    topic: "विषय",
+    general: "सामान्य पूछताछ",
+    suggestion: "जनसुझाव",
+    activity: "सामुदायिक गतिविधि",
+    message: "संदेश",
+    writeMessage: "अपना संदेश लिखें",
+    prepareButton: "संदेश तैयार करें",
+    formNote: "यह सुविधा एक टेक्स्ट फाइल तैयार करती है। आपका संदेश ऑनलाइन भेजा या संग्रहित नहीं होता।",
+    contactInfo: "संपर्क जानकारी",
+    location: "स्थान: नोनौरा, पूर्वी चंपारण, बिहार, भारत",
+    phone: "फोन: सत्यापित मोबाइल नंबर जोड़ें",
+    email: "ईमेल: सत्यापित ईमेल पता जोड़ें",
+    footer: "जनसेवा • सामुदायिक सहभागिता • विकास",
+    official: "आधिकारिक वेबसाइट"
+  }
+};
+
+const textMap = {
+  "nav a:nth-child(1)": "home",
+  "nav a:nth-child(2)": "about",
+  "nav a:nth-child(3)": "services",
+  "nav a:nth-child(4)": "news",
+  "nav a:nth-child(5)": "gallery",
+  "nav a:nth-child(6)": "contact",
+  ".badge": "badge",
+  ".hero h1": "headline",
+  ".hero div > p": "intro",
+  ".hero .btn:not(.secondary)": "explore",
+  ".hero .secondary": "contactUs",
+  "#about .heading span": "introduction",
+  "#about .heading h2": "aboutTitle",
+  "#about .box:first-child h3": "commitment",
+  "#about .box:first-child p": "aboutText",
+  "#about .box:last-child h3": "focus",
+  "#about .box:last-child p": "focusText",
+  "#services .heading span": "community",
+  "#services .heading h2": "publicService",
+  "#services .card:nth-child(1) h3": "support",
+  "#services .card:nth-child(1) p": "supportText",
+  "#services .card:nth-child(2) h3": "development",
+  "#services .card:nth-child(2) p": "developmentText",
+  "#services .card:nth-child(3) h3": "publicUpdates",
+  "#services .card:nth-child(3) p": "publicUpdatesText",
+  "#news h2": "activities",
+  "#news p": "newsText",
+  "#gallery .heading span": "memories",
+  "#gallery .heading h2": "galleryTitle",
+  ".gallery div:nth-child(1)": "activitiesGallery",
+  ".gallery div:nth-child(2)": "meetings",
+  ".gallery div:nth-child(3)": "events",
+  "#gallery + p": "galleryNote",
+  "#contact .heading span": "connect",
+  "#contact .heading h2": "contactTitle",
+  "#messageForm h3": "prepare",
+  "label[for='name']": "yourName",
+  "#name": "enterName",
+  "label[for='topic']": "topic",
+  "label[for='message']": "message",
+  "#message": "writeMessage",
+  "#messageForm button": "prepareButton",
+  "#messageForm .small": "formNote",
+  "#contact .box h3": "contactInfo",
+  "#contact .box p:nth-of-type(1)": "location",
+  "#contact .box p:nth-of-type(2)": "phone",
+  "#contact .box p:nth-of-type(3)": "email",
+  "footer p:nth-of-type(1)": "footer",
+  "footer p:nth-of-type(2)": "official"
+};
+
+const originalText = {};
+const originalPlaceholders = {};
+
+Object.keys(textMap).forEach(selector => {
+  const element = document.querySelector(selector);
+  if (element) {
+    originalText[selector] =
+      element.tagName === "INPUT" || element.tagName === "TEXTAREA"
+        ? ""
+        : element.textContent;
+    if (element.placeholder !== undefined) {
+      originalPlaceholders[selector] = element.placeholder;
+    }
+  }
+});
+
+function changeLanguage(lang) {
+  const dictionary = translations[lang];
+
+  document.documentElement.lang = lang;
+
+  Object.keys(textMap).forEach(selector => {
+    const element = document.querySelector(selector);
+    if (!element) return;
+
+    const key = textMap[selector];
+
+    if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+      element.placeholder =
+        lang === "hi"
+          ? dictionary[key]
+          : originalPlaceholders[selector] || "";
+    } else {
+      element.textContent =
+        lang === "hi"
+          ? dictionary[key]
+          : originalText[selector];
+    }
+  });
+
+  const topic = document.getElementById("topic");
+  const selectedTopic = topic.selectedIndex;
+
+  topic.options[0].textContent = dictionary.general;
+  topic.options[1].textContent = dictionary.suggestion;
+  topic.options[2].textContent = dictionary.activity;
+  topic.selectedIndex = selectedTopic;
+
+  document.querySelector(".logo").innerHTML =
+    lang === "hi"
+      ? "उमेश प्रसाद <span>यादव</span>"
+      : 'UMESH PRASAD <span>YADAV</span>';
+
+  localStorage.setItem("preferredLanguage", lang);
+}
+
+const languageSelect = document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change", function() {
+  changeLanguage(this.value);
+});
+
+const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+languageSelect.value = savedLanguage;
+changeLanguage(savedLanguage);
+
 document.getElementById("messageForm").addEventListener("submit", function(e) {
   e.preventDefault();
+
   const content =
     "Name: " + document.getElementById("name").value.trim() + "\n" +
-    "Topic: " + document.getElementById("topic").value + "\n\n" +
+    "Topic: " + document.getElementById("topic").selectedOptions[0].text + "\n\n" +
     "Message: " + document.getElementById("message").value.trim();
-  const blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+
+  const blob = new Blob([content], {
+    type: "text/plain;charset=utf-8"
+  });
+
   const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
+  const url = URL.createObjectURL(blob);
+
+  link.href = url;
   link.download = "public-message.txt";
   link.click();
-  URL.revokeObjectURL(link.href);
-  alert("A text file has been prepared. Your message has not been sent.");
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+  alert(
+    languageSelect.value === "hi"
+      ? "टेक्स्ट फाइल तैयार हो गई है। आपका संदेश ऑनलाइन नहीं भेजा गया है।"
+      : "A text file has been prepared. Your message has not been sent."
+  );
+});
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const translations = {
+  en: {
+    home: "Home",
+    about: "About",
+    services: "Public Service",
+    news: "Updates",
+    gallery: "Gallery",
+    contact: "Contact",
+    badge: "PUBLIC SERVICE • COMMUNITY DEVELOPMENT",
+    headline: "Working Together for a Better Tomorrow",
+    intro: "Welcome to the official website of Umesh Prasad Yadav. Explore community initiatives, public activities and ways to connect.",
+    explore: "Explore Public Service",
+    contactUs: "Contact Us",
+    aboutTitle: "About Umesh Prasad Yadav",
+    introduction: "Introduction",
+    commitment: "A Commitment to Public Service",
+    aboutText: "This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added using verified information.",
+    focus: "Our Focus",
+    focusText: "Community engagement, understanding public concerns, sharing useful information and supporting local development.",
+    community: "Community",
+    publicService: "Public Service",
+    support: "Public Support",
+    supportText: "Information and assistance for community members.",
+    development: "Local Development",
+    developmentText: "Updates about local initiatives and development activities.",
+    publicUpdates: "Public Updates",
+    publicUpdatesText: "Verified information about meetings, events and activities.",
+    activities: "News & Activities",
+    newsText: "Verified news, event announcements and community updates will appear here.",
+    memories: "Memories",
+    galleryTitle: "Photo & Video Gallery",
+    activitiesGallery: "Community Activities",
+    meetings: "Public Meetings",
+    events: "Social Events",
+    galleryNote: "Sample gallery sections. Add approved photographs when available.",
+    connect: "Connect",
+    contactTitle: "Contact & Public Suggestions",
+    prepare: "Prepare a Message",
+    yourName: "Your Name",
+    enterName: "Enter your name",
+    topic: "Topic",
+    general: "General Enquiry",
+    suggestion: "Public Suggestion",
+    activity: "Community Activity",
+    message: "Message",
+    writeMessage: "Write your message",
+    prepareButton: "Prepare Message",
+    formNote: "This demo prepares a text file. It does not send or store your message online.",
+    contactInfo: "Contact Information",
+    location: "Location: Nonaura, East Champaran, Bihar, India",
+    phone: "Phone: Add verified contact number",
+    email: "Email: Add verified email address",
+    footer: "Public Service • Community Engagement • Development",
+    official: "Official Website"
+  },
+
+  hi: {
+    home: "होम",
+    about: "परिचय",
+    services: "जनसेवा",
+    news: "अपडेट",
+    gallery: "गैलरी",
+    contact: "संपर्क",
+    badge: "जनसेवा • सामुदायिक विकास",
+    headline: "बेहतर कल के लिए मिलकर काम करें",
+    intro: "उमेश प्रसाद यादव की आधिकारिक वेबसाइट पर आपका स्वागत है। यहाँ सामाजिक गतिविधियों, जनसेवा और संपर्क की जानकारी प्राप्त करें।",
+    explore: "जनसेवा देखें",
+    contactUs: "संपर्क करें",
+    aboutTitle: "उमेश प्रसाद यादव का परिचय",
+    introduction: "परिचय",
+    commitment: "जनसेवा के प्रति प्रतिबद्धता",
+    aboutText: "इस वेबसाइट पर उमेश प्रसाद यादव, उनकी सार्वजनिक गतिविधियों और सामुदायिक पहलों की जानकारी उपलब्ध होगी। सत्यापित जानकारी के आधार पर विस्तृत परिचय जोड़ा जा सकता है।",
+    focus: "हमारा उद्देश्य",
+    focusText: "समुदाय से जुड़ना, जनसमस्याओं को समझना, उपयोगी जानकारी साझा करना और स्थानीय विकास में सहयोग करना।",
+    community: "समुदाय",
+    publicService: "जनसेवा",
+    support: "जनसहयोग",
+    supportText: "समुदाय के लोगों के लिए जानकारी और सहायता।",
+    development: "स्थानीय विकास",
+    developmentText: "स्थानीय पहलों और विकास कार्यों की जानकारी।",
+    publicUpdates: "जनता के लिए अपडेट",
+    publicUpdatesText: "बैठकों, कार्यक्रमों और गतिविधियों की सत्यापित जानकारी।",
+    activities: "समाचार एवं गतिविधियाँ",
+    newsText: "यहाँ सत्यापित समाचार, कार्यक्रमों की घोषणाएँ और सामाजिक गतिविधियों की जानकारी दिखाई जाएगी।",
+    memories: "यादें",
+    galleryTitle: "फोटो एवं वीडियो गैलरी",
+    activitiesGallery: "सामुदायिक गतिविधियाँ",
+    meetings: "जनसभाएँ",
+    events: "सामाजिक कार्यक्रम",
+    galleryNote: "यह गैलरी का नमूना है। उपलब्ध होने पर स्वीकृत तस्वीरें जोड़ें।",
+    connect: "जुड़ें",
+    contactTitle: "संपर्क एवं जनसुझाव",
+    prepare: "संदेश तैयार करें",
+    yourName: "आपका नाम",
+    enterName: "अपना नाम लिखें",
+    topic: "विषय",
+    general: "सामान्य पूछताछ",
+    suggestion: "जनसुझाव",
+    activity: "सामुदायिक गतिविधि",
+    message: "संदेश",
+    writeMessage: "अपना संदेश लिखें",
+    prepareButton: "संदेश तैयार करें",
+    formNote: "यह सुविधा एक टेक्स्ट फाइल तैयार करती है। आपका संदेश ऑनलाइन भेजा या संग्रहित नहीं होता।",
+    contactInfo: "संपर्क जानकारी",
+    location: "स्थान: नोनौरा, पूर्वी चंपारण, बिहार, भारत",
+    phone: "फोन: सत्यापित मोबाइल नंबर जोड़ें",
+    email: "ईमेल: सत्यापित ईमेल पता जोड़ें",
+    footer: "जनसेवा • सामुदायिक सहभागिता • विकास",
+    official: "आधिकारिक वेबसाइट"
+  }
+};
+
+const textMap = {
+  "nav a:nth-child(1)": "home",
+  "nav a:nth-child(2)": "about",
+  "nav a:nth-child(3)": "services",
+  "nav a:nth-child(4)": "news",
+  "nav a:nth-child(5)": "gallery",
+  "nav a:nth-child(6)": "contact",
+  ".badge": "badge",
+  ".hero h1": "headline",
+  ".hero div > p": "intro",
+  ".hero .btn:not(.secondary)": "explore",
+  ".hero .secondary": "contactUs",
+  "#about .heading span": "introduction",
+  "#about .heading h2": "aboutTitle",
+  "#about .box:first-child h3": "commitment",
+  "#about .box:first-child p": "aboutText",
+  "#about .box:last-child h3": "focus",
+  "#about .box:last-child p": "focusText",
+  "#services .heading span": "community",
+  "#services .heading h2": "publicService",
+  "#services .card:nth-child(1) h3": "support",
+  "#services .card:nth-child(1) p": "supportText",
+  "#services .card:nth-child(2) h3": "development",
+  "#services .card:nth-child(2) p": "developmentText",
+  "#services .card:nth-child(3) h3": "publicUpdates",
+  "#services .card:nth-child(3) p": "publicUpdatesText",
+  "#news h2": "activities",
+  "#news p": "newsText",
+  "#gallery .heading span": "memories",
+  "#gallery .heading h2": "galleryTitle",
+  ".gallery div:nth-child(1)": "activitiesGallery",
+  ".gallery div:nth-child(2)": "meetings",
+  ".gallery div:nth-child(3)": "events",
+  "#gallery + p": "galleryNote",
+  "#contact .heading span": "connect",
+  "#contact .heading h2": "contactTitle",
+  "#messageForm h3": "prepare",
+  "label[for='name']": "yourName",
+  "#name": "enterName",
+  "label[for='topic']": "topic",
+  "label[for='message']": "message",
+  "#message": "writeMessage",
+  "#messageForm button": "prepareButton",
+  "#messageForm .small": "formNote",
+  "#contact .box h3": "contactInfo",
+  "#contact .box p:nth-of-type(1)": "location",
+  "#contact .box p:nth-of-type(2)": "phone",
+  "#contact .box p:nth-of-type(3)": "email",
+  "footer p:nth-of-type(1)": "footer",
+  "footer p:nth-of-type(2)": "official"
+};
+
+const originalText = {};
+const originalPlaceholders = {};
+
+Object.keys(textMap).forEach(selector => {
+  const element = document.querySelector(selector);
+  if (element) {
+    originalText[selector] =
+      element.tagName === "INPUT" || element.tagName === "TEXTAREA"
+        ? ""
+        : element.textContent;
+    if (element.placeholder !== undefined) {
+      originalPlaceholders[selector] = element.placeholder;
+    }
+  }
+});
+
+function changeLanguage(lang) {
+  const dictionary = translations[lang];
+
+  document.documentElement.lang = lang;
+
+  Object.keys(textMap).forEach(selector => {
+    const element = document.querySelector(selector);
+    if (!element) return;
+
+    const key = textMap[selector];
+
+    if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+      element.placeholder =
+        lang === "hi"
+          ? dictionary[key]
+          : originalPlaceholders[selector] || "";
+    } else {
+      element.textContent =
+        lang === "hi"
+          ? dictionary[key]
+          : originalText[selector];
+    }
+  });
+
+  const topic = document.getElementById("topic");
+  const selectedTopic = topic.selectedIndex;
+
+  topic.options[0].textContent = dictionary.general;
+  topic.options[1].textContent = dictionary.suggestion;
+  topic.options[2].textContent = dictionary.activity;
+  topic.selectedIndex = selectedTopic;
+
+  document.querySelector(".logo").innerHTML =
+    lang === "hi"
+      ? "उमेश प्रसाद <span>यादव</span>"
+      : 'UMESH PRASAD <span>YADAV</span>';
+
+  localStorage.setItem("preferredLanguage", lang);
+}
+
+const languageSelect = document.getElementById("languageSelect");
+
+languageSelect.addEventListener("change", function() {
+  changeLanguage(this.value);
+});
+
+const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+languageSelect.value = savedLanguage;
+changeLanguage(savedLanguage);
+
+document.getElementById("messageForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const content =
+    "Name: " + document.getElementById("name").value.trim() + "\n" +
+    "Topic: " + document.getElementById("topic").selectedOptions[0].text + "\n\n" +
+    "Message: " + document.getElementById("message").value.trim();
+
+  const blob = new Blob([content], {
+    type: "text/plain;charset=utf-8"
+  });
+
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(blob);
+
+  link.href = url;
+  link.download = "public-message.txt";
+  link.click();
+
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+  alert(
+    languageSelect.value === "hi"
+      ? "टेक्स्ट फाइल तैयार हो गई है। आपका संदेश ऑनलाइन नहीं भेजा गया है।"
+      : "A text file has been prepared. Your message has not been sent."
+  );
 });
 </script>
 
