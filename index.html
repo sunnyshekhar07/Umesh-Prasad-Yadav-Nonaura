@@ -1,890 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Umesh Prasad Yadav | Official Website</title>
-<meta name="description" content="Official website of Umesh Prasad Yadav, Nonaura, East Champaran, Bihar.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>टीम उमेश प्रसाद यादव | आधिकारिक वेबसाइट</title>
+<meta name="description" content="टीम उमेश प्रसाद यादव की आधिकारिक वेबसाइट — जनसेवा, विकास और जनसंपर्क।">
+<meta name="theme-color" content="#082d78">
 <style>
-:root {
-  --blue: #16438F;
-  --green: #27C96F;
-  --white: #FFFFFF;
-  --light: #F2F6FC;
-  --dark: #10264B;
+:root{--navy:#06235f;--blue:#0c3d91;--green:#18df72;--green2:#00a95b;--white:#fff;--light:#f2f6fc;--text:#25334c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,"Noto Sans Devanagari",sans-serif;color:var(--text);background:var(--light);line-height:1.6}
+a{text-decoration:none}
+header{position:sticky;top:0;z-index:30;background:#082c78;color:#fff;padding:10px 4%;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 4px 18px #001b5033}
+.brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:16px}
+.brand img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid var(--green);background:#fff}
+.brand-name span{color:var(--green)}
+nav{display:flex;align-items:center;gap:clamp(8px,1.7vw,23px);flex-wrap:wrap}
+nav a{font-size:13px;font-weight:700;color:#fff}
+nav a:hover{color:var(--green)}
+.langbar{display:flex;justify-content:flex-end;align-items:center;gap:8px;padding:8px 4%;background:#fff}
+.langbar label{font-size:13px;font-weight:700}
+.langbar select{width:auto;padding:7px 10px;border:1px solid #ccd5e5;border-radius:7px;background:#fff}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:570px;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:10px;padding:45px 5%;color:#fff;background:radial-gradient(ellipse at 80% 42%,#16d56e 0%,#087e77 24%,transparent 47%),linear-gradient(115deg,#061b57 0%,#073783 60%,#087b77 100%)}
+.hero:before{content:"";position:absolute;z-index:-1;left:-10%;right:-10%;bottom:-105px;height:210px;border-top:12px solid #18df72;border-bottom:8px solid #0b8ce0;transform:rotate(-8deg);border-radius:50%}
+.hero:after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#061b5740,transparent 70%);pointer-events:none}
+.hero-copy{position:relative;z-index:2;max-width:760px}
+.badge{display:inline-block;background:var(--green);color:#06331b;padding:6px 12px;border-radius:30px;font-size:12px;font-weight:800}
+.hero h1{font-size:clamp(36px,5.3vw,70px);line-height:1.08;font-weight:900;letter-spacing:-1px;margin:20px 0 14px}
+.hero h1 .accent{display:block;text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:6px;text-underline-offset:10px}
+.hero-sub{font-size:clamp(20px,2.5vw,34px);font-weight:800;margin:20px 0 10px}
+.hero-meta{font-weight:700;margin-top:12px}
+.hero-meta b{color:var(--green);padding:0 10px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;padding:12px 22px;border-radius:30px;background:linear-gradient(110deg,#19e86e,#00a65d);color:#06351b;font-weight:900;border:2px solid transparent;box-shadow:0 5px 18px #0002;cursor:pointer}
+.btn.outline{background:#061b57aa;color:#fff;border-color:#fff}
+.hero-person{align-self:end;justify-self:center;position:relative;z-index:1;width:100%;height:500px;display:flex;align-items:flex-end;justify-content:center}
+.hero-person img{display:block;max-width:100%;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 10px 22px #00143866)}
+.banner img{display:block;width:100%;height:auto}
+section{padding:55px 6%}
+.heading{text-align:center;margin-bottom:28px}
+.heading span{color:#07834a;font-size:12px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}
+.heading h2{color:var(--blue);font-size:clamp(26px,4vw,35px);margin-top:5px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.box,.card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 8px 24px #16438f12}
+.box h3,.card h3{color:var(--blue);margin-bottom:8px}
+.services{background:#fff}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{border-bottom:4px solid var(--green)}
+.icon{font-size:30px;margin-bottom:8px}
+.card p{font-size:14px;color:#657189}
+.updates{background:linear-gradient(120deg,#092a72,#075b88);color:#fff;text-align:center}
+.updates h2{font-size:30px;margin-bottom:8px}
+.updates p{color:#e1eaf8}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.gallery-item{min-height:135px;border-radius:12px;background:linear-gradient(135deg,#0c3d91,#087e8b);color:#fff;display:grid;place-items:center;text-align:center;padding:15px;border-bottom:4px solid var(--green);font-weight:700}
+.join{background:linear-gradient(120deg,#19d56c,#0b9e68);text-align:center;color:#06351b}
+.join h2{font-size:clamp(26px,4vw,38px);margin-bottom:8px}
+.join p{margin:8px auto;max-width:760px}
+.join .btn{background:#082c78;color:#fff;margin-top:12px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card p{margin:11px 0;overflow-wrap:anywhere}
+.contact-card a:not(.btn){color:var(--blue);font-weight:800}
+.contact-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.note{font-size:12px;color:#69758a;margin-top:12px}
+footer{background:#071c4c;color:#fff;text-align:center;padding:26px 6%}
+footer p{font-size:13px;color:#cbd6e7;margin-top:5px}
+@media(max-width:850px){
+ header{justify-content:center}
+ nav{justify-content:center}
+ .hero{grid-template-columns:1fr;min-height:auto;padding:42px 6% 0;text-align:center}
+ .hero-copy{margin:auto}
+ .hero-actions{justify-content:center}
+ .hero-person{height:min(420px,95vw);max-width:500px;margin:auto}
+ .hero-person img{object-position:center bottom}
+ .grid2,.contact-grid{grid-template-columns:1fr}
+ .cards{grid-template-columns:1fr}
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html { scroll-behavior: smooth; }
-body {
-  font-family: Arial, sans-serif;
-  color: #24334B;
-  background: var(--light);
-  line-height: 1.6;
-}
-a { text-decoration: none; }
-header {
-  background: var(--blue);
-  color: white;
-  padding: 15px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-.logo {
-  font-size: 19px;
-  font-weight: bold;
-}
-.logo span { color: var(--green); }
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-nav a {
-  color: white;
-  font-size: 13px;
-  font-weight: bold;
-}
-nav a:hover { color: var(--green); }
-.hero {
-  background: linear-gradient(135deg, #16438F, #0E326F);
-  color: white;
-  padding: 65px 7%;
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  align-items: center;
-  gap: 35px;
-}
-.badge {
-  display: inline-block;
-  color: #092C63;
-  background: var(--green);
-  border-radius: 30px;
-  padding: 7px 14px;
-  font-size: 12px;
-  font-weight: bold;
-}
-.hero h1 {
-  font-size: clamp(34px, 5vw, 55px);
-  line-height: 1.15;
-  margin: 20px 0;
-}
-.hero p { color: #E4ECFA; }
-.btn {
-  display: inline-block;
-  background: var(--green);
-  color: #07351D;
-  padding: 12px 19px;
-  margin-top: 23px;
-  border-radius: 6px;
-  font-weight: bold;
-}
-.btn.secondary {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  margin-left: 8px;
-}
-.profile {
-  border: 2px solid #27C96F;
-  border-radius: 18px;
-  padding: 30px 15px;
-  text-align: center;
-  background: #FFFFFF12;
-}
-.profile-icon {
-  height: 125px;
-  width: 125px;
-  border-radius: 50%;
-  background: var(--green);
-  color: var(--blue);
-  display: grid;
-  place-items: center;
-  font-size: 42px;
-  font-weight: bold;
-  margin: auto auto 15px;
-  border: 5px solid white;
-}
-.profile h2 { font-size: 21px; }
-.profile p { font-size: 13px; margin-top: 7px; }
-section { padding: 60px 7%; }
-.heading {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.heading span {
-  color: #16834A;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-.heading h2 {
-  color: var(--blue);
-  font-size: 30px;
-  margin-top: 6px;
-}
-.about-grid, .contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-.box, .card, form {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 22px #16438F12;
-}
-.box h3, .card h3, form h3 {
-  color: var(--blue);
-  margin-bottom: 10px;
-}
-.services {
-  background: white;
-}
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.card {
-  border-bottom: 4px solid var(--green);
-}
-.icon { font-size: 30px; }
-.card p { font-size: 14px; color: #657189; }
-.updates {
-  background: var(--blue);
-  color: white;
-  text-align: center;
-}
-.updates h2 { font-size: 30px; margin-bottom: 12px; }
-.updates p { color: #E1EAF8; }
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-.gallery div {
-  background: linear-gradient(135deg, var(--blue), #087E8B);
-  color: white;
-  min-height: 130px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 15px;
-  border-radius: 10px;
-  border-bottom: 4px solid var(--green);
-}
-label {
-  display: block;
-  margin: 12px 0 5px;
-  font-size: 13px;
-  font-weight: bold;
-}
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #D6DEEA;
-  border-radius: 6px;
-  font: inherit;
-}
-textarea { min-height: 110px; }
-button {
-  border: none;
-  cursor: pointer;
-  font: inherit;
-}
-.small {
-  font-size: 12px;
-  color: #69758A;
-  margin-top: 10px;
-}
-footer {
-  background: #10264B;
-  color: white;
-  text-align: center;
-  padding: 30px 6%;
-}
-footer p { font-size: 13px; color: #CBD6E7; margin-top: 6px; }
-@media(max-width: 700px) {
-  header { justify-content: center; text-align: center; }
-  nav { justify-content: center; gap: 12px; }
-  .hero { grid-template-columns: 1fr; padding: 45px 6%; }
-  .profile { max-width: 340px; width: 100%; margin: auto; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
-  .cards { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr 1fr; }
-  section { padding: 45px 6%; }
+@media(max-width:520px){
+ .brand{font-size:14px}
+ .brand img{width:42px;height:42px}
+ nav{gap:9px}
+ nav a{font-size:12px}
+ .hero h1{font-size:clamp(34px,10vw,48px)}
+ .hero-sub{font-size:22px}
+ section{padding:40px 5%}
+ .gallery{grid-template-columns:1fr 1fr}
+ .hero-person{height:340px}
 }
 </style>
 </head>
 <body>
-
 <header>
-  <a class="logo" href="#home" style="color:white">
-    UMESH PRASAD <span>YADAV</span>
+  <a class="brand" href="#home">
+    <img src="team-logo.jpg" alt="टीम उमेश प्रसाद यादव लोगो" onerror="this.style.display='none'">
+    <span class="brand-name" id="brandName">टीम उमेश प्रसाद <span>यादव</span></span>
   </a>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Public Service</a>
-    <a href="#news">Updates</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+  <nav aria-label="मुख्य मेनू">
+    <a href="#home" data-en="Home" data-hi="होम">होम</a>
+    <a href="#about" data-en="About" data-hi="परिचय">परिचय</a>
+    <a href="#services" data-en="Work & Development" data-hi="कार्य एवं विकास">कार्य एवं विकास</a>
+    <a href="#gallery" data-en="Gallery" data-hi="गैलरी">गैलरी</a>
+    <a href="#contact" data-en="Contact" data-hi="संपर्क">संपर्क</a>
   </nav>
+  <a class="btn" href="#contact" data-en="Get in Touch" data-hi="संपर्क करें">संपर्क करें</a>
 </header>
-<div style="text-align:right;padding:10px 6%;background:#fff;">
-  <label for="languageSelect" style="display:inline;margin-right:8px;">
-    Language / भाषा:
-  </label>
-
-  <select id="languageSelect" style="width:auto;padding:8px;">
-    <option value="en">English</option>
-    <option value="hi">हिंदी</option>
-  </select>
+<div class="langbar">
+  <label for="languageSelect" data-en="Language:" data-hi="भाषा:">भाषा:</label>
+  <select id="languageSelect"><option value="hi">हिंदी</option><option value="en">English</option></select>
 </div>
 <main>
 <section class="hero" id="home">
-  <div>
-    <span class="badge">PUBLIC SERVICE • COMMUNITY DEVELOPMENT</span>
-    <h1>Working Together for a Better Tomorrow</h1>
-    <p>Welcome to the official website of Umesh Prasad Yadav. Explore community initiatives, public activities and ways to connect.</p>
-    <a class="btn" href="#services">Explore Public Service</a>
-    <a class="btn secondary" href="#contact">Contact Us</a>
+  <div class="hero-copy">
+    <span class="badge" data-en="PUBLIC SERVICE • DEVELOPMENT" data-hi="जनसेवा • विकास">जनसेवा • विकास</span>
+    <h1><span data-en="Public Service," data-hi="जनसेवा,">जनसेवा,</span><span class="accent" data-en="Development & Trust" data-hi="विकास और विश्वास">विकास और विश्वास</span></h1>
+    <p class="hero-sub" data-en="Together with you, our commitment." data-hi="आपका साथ, हमारा संकल्प।">आपका साथ, हमारा संकल्प।</p>
+    <p class="hero-meta"><span data-en="Service to people" data-hi="जनता की सेवा">जनता की सेवा</span><b>●</b><span data-en="Area development" data-hi="क्षेत्र का विकास">क्षेत्र का विकास</span></p>
+    <div class="hero-actions">
+      <a class="btn" href="#services" data-en="Explore Our Work ›" data-hi="हमारे कार्य देखें ›">हमारे कार्य देखें ›</a>
+      <a class="btn outline" href="#contact" data-en="Contact Us ›" data-hi="संपर्क करें ›">संपर्क करें ›</a>
+    </div>
   </div>
-  <div class="profile">
-    <div class="profile-icon">UY</div>
-    <h2>Umesh Prasad Yadav</h2>
-    <p>Nonaura, East Champaran, Bihar</p>
-    <p>Community • Service • Development</p>
+  <div class="hero-person">
+    <img src="umesh-photo.png" alt="उमेश प्रसाद यादव" onerror="this.onerror=null;this.src='umesh-photo.jpg';">
   </div>
+</section>
+
+<section class="banner" aria-label="टीम से जुड़ने का बैनर">
+  <img src="joining-banner.jpg" alt="टीम उमेश प्रसाद यादव से जुड़ने के लिए 7033339088 पर Hi मैसेज करें">
 </section>
 
 <section id="about">
-  <div class="heading">
-    <span>Introduction</span>
-    <h2>About Umesh Prasad Yadav</h2>
-  </div>
-  <div class="about-grid">
-    <div class="box">
-      <h3>A Commitment to Public Service</h3>
-      <p>This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added using verified information.</p>
-    </div>
-    <div class="box">
-      <h3>Our Focus</h3>
-      <p>Community engagement, understanding public concerns, sharing useful information and supporting local development.</p>
-    </div>
+  <div class="heading"><span data-en="Introduction" data-hi="परिचय">परिचय</span><h2 data-en="About Umesh Prasad Yadav" data-hi="उमेश प्रसाद यादव के बारे में">उमेश प्रसाद यादव के बारे में</h2></div>
+  <div class="grid2">
+    <div class="box"><h3 data-en="A Commitment to Public Service" data-hi="जनसेवा के प्रति प्रतिबद्धता">जनसेवा के प्रति प्रतिबद्धता</h3><p data-en="This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added with verified information." data-hi="इस वेबसाइट पर उमेश प्रसाद यादव, सार्वजनिक गतिविधियों और सामाजिक पहलों की जानकारी साझा की जाएगी। सत्यापित जानकारी मिलने पर विस्तृत परिचय जोड़ा जा सकता है।">इस वेबसाइट पर उमेश प्रसाद यादव, सार्वजनिक गतिविधियों और सामाजिक पहलों की जानकारी साझा की जाएगी। सत्यापित जानकारी मिलने पर विस्तृत परिचय जोड़ा जा सकता है।</p></div>
+    <div class="box"><h3 data-en="Our Focus" data-hi="हमारा उद्देश्य">हमारा उद्देश्य</h3><p data-en="Community engagement, understanding public concerns, sharing useful information and supporting local development." data-hi="समुदाय से जुड़ना, जनसमस्याओं को समझना, उपयोगी जानकारी साझा करना और स्थानीय विकास में सहयोग करना।">समुदाय से जुड़ना, जनसमस्याओं को समझना, उपयोगी जानकारी साझा करना और स्थानीय विकास में सहयोग करना।</p></div>
   </div>
 </section>
-
 <section class="services" id="services">
-  <div class="heading">
-    <span>Community</span>
-    <h2>Public Service</h2>
-  </div>
+  <div class="heading"><span data-en="Community" data-hi="समुदाय">समुदाय</span><h2 data-en="Work & Development" data-hi="कार्य एवं विकास">कार्य एवं विकास</h2></div>
   <div class="cards">
-    <div class="card">
-      <div class="icon">🤝</div>
-      <h3>Public Support</h3>
-      <p>Information and assistance for community members.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🏘️</div>
-      <h3>Local Development</h3>
-      <p>Updates about local initiatives and development activities.</p>
-    </div>
-    <div class="card">
-      <div class="icon">📢</div>
-      <h3>Public Updates</h3>
-      <p>Verified information about meetings, events and activities.</p>
-    </div>
+    <div class="card"><div class="icon">🤝</div><h3 data-en="Public Support" data-hi="जनसहयोग">जनसहयोग</h3><p data-en="Information and assistance for community members." data-hi="समुदाय के लोगों के लिए जानकारी और सहायता।">समुदाय के लोगों के लिए जानकारी और सहायता।</p></div>
+    <div class="card"><div class="icon">🏘️</div><h3 data-en="Local Development" data-hi="स्थानीय विकास">स्थानीय विकास</h3><p data-en="Updates about local initiatives and development activities." data-hi="स्थानीय पहलों और विकास कार्यों की जानकारी।">स्थानीय पहलों और विकास कार्यों की जानकारी।</p></div>
+    <div class="card"><div class="icon">📢</div><h3 data-en="Public Updates" data-hi="जनता के लिए अपडेट">जनता के लिए अपडेट</h3><p data-en="Verified information about meetings, events and activities." data-hi="बैठकों, कार्यक्रमों और गतिविधियों की सत्यापित जानकारी।">बैठकों, कार्यक्रमों और गतिविधियों की सत्यापित जानकारी।</p></div>
   </div>
 </section>
-
-<section class="updates" id="news">
-  <h2>News & Activities</h2>
-  <p>Verified news, event announcements and community updates will appear here.</p>
+<section class="updates" id="updates">
+  <h2 data-en="News & Activities" data-hi="समाचार एवं गतिविधियाँ">समाचार एवं गतिविधियाँ</h2>
+  <p data-en="Verified news, event announcements and community updates will appear here." data-hi="यहाँ सत्यापित समाचार, कार्यक्रमों की घोषणाएँ और सामाजिक गतिविधियों की जानकारी साझा की जाएगी।">यहाँ सत्यापित समाचार, कार्यक्रमों की घोषणाएँ और सामाजिक गतिविधियों की जानकारी साझा की जाएगी।</p>
 </section>
-
 <section id="gallery">
-  <div class="heading">
-    <span>Memories</span>
-    <h2>Photo & Video Gallery</h2>
-  </div>
+  <div class="heading"><span data-en="Memories" data-hi="यादें">यादें</span><h2 data-en="Photo & Video Gallery" data-hi="फोटो एवं वीडियो गैलरी">फोटो एवं वीडियो गैलरी</h2></div>
   <div class="gallery">
-    <div>Community Activities</div>
-    <div>Public Meetings</div>
-    <div>Social Events</div>
+    <div class="gallery-item" data-en="Community Activities" data-hi="सामुदायिक गतिविधियाँ">सामुदायिक गतिविधियाँ</div>
+    <div class="gallery-item" data-en="Public Meetings" data-hi="जनसभाएँ">जनसभाएँ</div>
+    <div class="gallery-item" data-en="Social Events" data-hi="सामाजिक कार्यक्रम">सामाजिक कार्यक्रम</div>
   </div>
-  <p class="small">Sample gallery sections. Add approved photographs when available.</p>
 </section>
-
+<section class="join" id="join">
+  <h2 data-en="Join Team Umesh Prasad Yadav" data-hi="टीम उमेश प्रसाद यादव से जुड़ें">टीम उमेश प्रसाद यादव से जुड़ें</h2>
+  <p data-en="To join the team, send “Hi” on WhatsApp to 7033339088." data-hi="टीम से जुड़ने के लिए 7033339088 पर WhatsApp से 'Hi' मैसेज करें।">टीम से जुड़ने के लिए 7033339088 पर WhatsApp से 'Hi' मैसेज करें।</p>
+  <p data-en="Public Service • Development • Community Participation" data-hi="जनसेवा • विकास • सामाजिक सहभागिता">जनसेवा • विकास • सामाजिक सहभागिता</p>
+  <a class="btn" href="https://wa.me/917033339088?text=Hi" target="_blank" rel="noopener" data-en="Send Hi on WhatsApp" data-hi="WhatsApp पर Hi भेजें">WhatsApp पर Hi भेजें</a>
+</section>
 <section id="contact">
-  <div class="heading">
-    <span>Connect</span>
-    <h2>Contact & Public Suggestions</h2>
-  </div>
+  <div class="heading"><span data-en="Connect" data-hi="जुड़ें">जुड़ें</span><h2 data-en="Contact Information" data-hi="संपर्क जानकारी">संपर्क जानकारी</h2></div>
   <div class="contact-grid">
-    <form id="messageForm">
-      <h3>Prepare a Message</h3>
-      <label for="name">Your Name</label>
-      <input id="name" required maxlength="100" placeholder="Enter your name">
-      <label for="topic">Topic</label>
-      <select id="topic">
-        <option>General Enquiry</option>
-        <option>Public Suggestion</option>
-        <option>Community Activity</option>
-      </select>
-      <label for="message">Message</label>
-      <textarea id="message" required maxlength="2000" placeholder="Write your message"></textarea>
-      <button class="btn" type="submit">Prepare Message</button>
-      <p class="small">This demo prepares a text file. It does not send or store your message online.</p>
-    </form>
-    <div class="box">
-      <h3>Contact Information</h3>
-      <p>Location: Nonaura, East Champaran, Bihar, India</p>
-      <p style="margin-top:12px">Phone: Add verified contact number</p>
-      <p style="margin-top:12px">Email: Add verified email address</p>
+    <div class="box contact-card">
+      <h3 data-en="Team Contact" data-hi="टीम से संपर्क">टीम से संपर्क</h3>
+      <p><strong data-en="Phone / WhatsApp:" data-hi="फोन / WhatsApp:">फोन / WhatsApp:</strong> <a href="https://wa.me/917033339088?text=Hi" target="_blank" rel="noopener">7033339088</a></p>
+      <p><strong data-en="Location:" data-hi="स्थान:">स्थान:</strong> <span data-en="Nonaura, East Champaran, Bihar, India" data-hi="नोनौरा, पूर्वी चंपारण, बिहार, भारत">नोनौरा, पूर्वी चंपारण, बिहार, भारत</span></p>
+      <div class="contact-buttons"><a class="btn" href="tel:+917033339088" data-en="Call Now" data-hi="अभी कॉल करें">अभी कॉल करें</a><a class="btn" href="https://wa.me/917033339088?text=Hi" target="_blank" rel="noopener">WhatsApp</a></div>
+      <p class="note" data-en="Add verified official email and social media links here when available." data-hi="उपलब्ध होने पर सत्यापित आधिकारिक ईमेल और सोशल मीडिया लिंक यहाँ जोड़ें।">उपलब्ध होने पर सत्यापित आधिकारिक ईमेल और सोशल मीडिया लिंक यहाँ जोड़ें।</p>
     </div>
+    <div class="box"><h3 data-en="Send a Message" data-hi="संदेश भेजें">संदेश भेजें</h3><p data-en="The WhatsApp button opens a chat with a prepared message. You must press Send yourself." data-hi="WhatsApp बटन दबाने पर संदेश तैयार होकर चैट खुलेगी। भेजने के लिए आपको स्वयं Send दबाना होगा।">WhatsApp बटन दबाने पर संदेश तैयार होकर चैट खुलेगी। भेजने के लिए आपको स्वयं Send दबाना होगा।</p><a class="btn" style="margin-top:16px" href="https://wa.me/917033339088?text=Namaste%2C%20mujhe%20team%20se%20judna%20hai." target="_blank" rel="noopener" data-en="Contact the Team" data-hi="टीम से संपर्क करें">टीम से संपर्क करें</a></div>
   </div>
 </section>
 </main>
-
-<footer>
-  <strong>Umesh Prasad Yadav</strong>
-  <p>Public Service • Community Engagement • Development</p>
-  <p>© <span id="year"></span> | Official Website</p>
-</footer>
-
+<footer><strong>टीम उमेश प्रसाद यादव</strong><p data-en="Public Service • Development • Trust" data-hi="जनसेवा • विकास • विश्वास">जनसेवा • विकास • विश्वास</p><p>© <span id="year"></span> <span data-en="Official Website" data-hi="आधिकारिक वेबसाइट">आधिकारिक वेबसाइट</span></p></footer>
 <script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-const translations = {
-  en: {
-    home: "Home",
-    about: "About",
-    services: "Public Service",
-    news: "Updates",
-    gallery: "Gallery",
-    contact: "Contact",
-    badge: "PUBLIC SERVICE • COMMUNITY DEVELOPMENT",
-    headline: "Working Together for a Better Tomorrow",
-    intro: "Welcome to the official website of Umesh Prasad Yadav. Explore community initiatives, public activities and ways to connect.",
-    explore: "Explore Public Service",
-    contactUs: "Contact Us",
-    aboutTitle: "About Umesh Prasad Yadav",
-    introduction: "Introduction",
-    commitment: "A Commitment to Public Service",
-    aboutText: "This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added using verified information.",
-    focus: "Our Focus",
-    focusText: "Community engagement, understanding public concerns, sharing useful information and supporting local development.",
-    community: "Community",
-    publicService: "Public Service",
-    support: "Public Support",
-    supportText: "Information and assistance for community members.",
-    development: "Local Development",
-    developmentText: "Updates about local initiatives and development activities.",
-    publicUpdates: "Public Updates",
-    publicUpdatesText: "Verified information about meetings, events and activities.",
-    activities: "News & Activities",
-    newsText: "Verified news, event announcements and community updates will appear here.",
-    memories: "Memories",
-    galleryTitle: "Photo & Video Gallery",
-    activitiesGallery: "Community Activities",
-    meetings: "Public Meetings",
-    events: "Social Events",
-    galleryNote: "Sample gallery sections. Add approved photographs when available.",
-    connect: "Connect",
-    contactTitle: "Contact & Public Suggestions",
-    prepare: "Prepare a Message",
-    yourName: "Your Name",
-    enterName: "Enter your name",
-    topic: "Topic",
-    general: "General Enquiry",
-    suggestion: "Public Suggestion",
-    activity: "Community Activity",
-    message: "Message",
-    writeMessage: "Write your message",
-    prepareButton: "Prepare Message",
-    formNote: "This demo prepares a text file. It does not send or store your message online.",
-    contactInfo: "Contact Information",
-    location: "Location: Nonaura, East Champaran, Bihar, India",
-    phone: "Phone: Add verified contact number",
-    email: "Email: Add verified email address",
-    footer: "Public Service • Community Engagement • Development",
-    official: "Official Website"
-  },
-
-  hi: {
-    home: "होम",
-    about: "परिचय",
-    services: "जनसेवा",
-    news: "अपडेट",
-    gallery: "गैलरी",
-    contact: "संपर्क",
-    badge: "जनसेवा • सामुदायिक विकास",
-    headline: "बेहतर कल के लिए मिलकर काम करें",
-    intro: "उमेश प्रसाद यादव की आधिकारिक वेबसाइट पर आपका स्वागत है। यहाँ सामाजिक गतिविधियों, जनसेवा और संपर्क की जानकारी प्राप्त करें।",
-    explore: "जनसेवा देखें",
-    contactUs: "संपर्क करें",
-    aboutTitle: "उमेश प्रसाद यादव का परिचय",
-    introduction: "परिचय",
-    commitment: "जनसेवा के प्रति प्रतिबद्धता",
-    aboutText: "इस वेबसाइट पर उमेश प्रसाद यादव, उनकी सार्वजनिक गतिविधियों और सामुदायिक पहलों की जानकारी उपलब्ध होगी। सत्यापित जानकारी के आधार पर विस्तृत परिचय जोड़ा जा सकता है।",
-    focus: "हमारा उद्देश्य",
-    focusText: "समुदाय से जुड़ना, जनसमस्याओं को समझना, उपयोगी जानकारी साझा करना और स्थानीय विकास में सहयोग करना।",
-    community: "समुदाय",
-    publicService: "जनसेवा",
-    support: "जनसहयोग",
-    supportText: "समुदाय के लोगों के लिए जानकारी और सहायता।",
-    development: "स्थानीय विकास",
-    developmentText: "स्थानीय पहलों और विकास कार्यों की जानकारी।",
-    publicUpdates: "जनता के लिए अपडेट",
-    publicUpdatesText: "बैठकों, कार्यक्रमों और गतिविधियों की सत्यापित जानकारी।",
-    activities: "समाचार एवं गतिविधियाँ",
-    newsText: "यहाँ सत्यापित समाचार, कार्यक्रमों की घोषणाएँ और सामाजिक गतिविधियों की जानकारी दिखाई जाएगी।",
-    memories: "यादें",
-    galleryTitle: "फोटो एवं वीडियो गैलरी",
-    activitiesGallery: "सामुदायिक गतिविधियाँ",
-    meetings: "जनसभाएँ",
-    events: "सामाजिक कार्यक्रम",
-    galleryNote: "यह गैलरी का नमूना है। उपलब्ध होने पर स्वीकृत तस्वीरें जोड़ें।",
-    connect: "जुड़ें",
-    contactTitle: "संपर्क एवं जनसुझाव",
-    prepare: "संदेश तैयार करें",
-    yourName: "आपका नाम",
-    enterName: "अपना नाम लिखें",
-    topic: "विषय",
-    general: "सामान्य पूछताछ",
-    suggestion: "जनसुझाव",
-    activity: "सामुदायिक गतिविधि",
-    message: "संदेश",
-    writeMessage: "अपना संदेश लिखें",
-    prepareButton: "संदेश तैयार करें",
-    formNote: "यह सुविधा एक टेक्स्ट फाइल तैयार करती है। आपका संदेश ऑनलाइन भेजा या संग्रहित नहीं होता।",
-    contactInfo: "संपर्क जानकारी",
-    location: "स्थान: नोनौरा, पूर्वी चंपारण, बिहार, भारत",
-    phone: "फोन: सत्यापित मोबाइल नंबर जोड़ें",
-    email: "ईमेल: सत्यापित ईमेल पता जोड़ें",
-    footer: "जनसेवा • सामुदायिक सहभागिता • विकास",
-    official: "आधिकारिक वेबसाइट"
-  }
-};
-
-const textMap = {
-  "nav a:nth-child(1)": "home",
-  "nav a:nth-child(2)": "about",
-  "nav a:nth-child(3)": "services",
-  "nav a:nth-child(4)": "news",
-  "nav a:nth-child(5)": "gallery",
-  "nav a:nth-child(6)": "contact",
-  ".badge": "badge",
-  ".hero h1": "headline",
-  ".hero div > p": "intro",
-  ".hero .btn:not(.secondary)": "explore",
-  ".hero .secondary": "contactUs",
-  "#about .heading span": "introduction",
-  "#about .heading h2": "aboutTitle",
-  "#about .box:first-child h3": "commitment",
-  "#about .box:first-child p": "aboutText",
-  "#about .box:last-child h3": "focus",
-  "#about .box:last-child p": "focusText",
-  "#services .heading span": "community",
-  "#services .heading h2": "publicService",
-  "#services .card:nth-child(1) h3": "support",
-  "#services .card:nth-child(1) p": "supportText",
-  "#services .card:nth-child(2) h3": "development",
-  "#services .card:nth-child(2) p": "developmentText",
-  "#services .card:nth-child(3) h3": "publicUpdates",
-  "#services .card:nth-child(3) p": "publicUpdatesText",
-  "#news h2": "activities",
-  "#news p": "newsText",
-  "#gallery .heading span": "memories",
-  "#gallery .heading h2": "galleryTitle",
-  ".gallery div:nth-child(1)": "activitiesGallery",
-  ".gallery div:nth-child(2)": "meetings",
-  ".gallery div:nth-child(3)": "events",
-  "#gallery + p": "galleryNote",
-  "#contact .heading span": "connect",
-  "#contact .heading h2": "contactTitle",
-  "#messageForm h3": "prepare",
-  "label[for='name']": "yourName",
-  "#name": "enterName",
-  "label[for='topic']": "topic",
-  "label[for='message']": "message",
-  "#message": "writeMessage",
-  "#messageForm button": "prepareButton",
-  "#messageForm .small": "formNote",
-  "#contact .box h3": "contactInfo",
-  "#contact .box p:nth-of-type(1)": "location",
-  "#contact .box p:nth-of-type(2)": "phone",
-  "#contact .box p:nth-of-type(3)": "email",
-  "footer p:nth-of-type(1)": "footer",
-  "footer p:nth-of-type(2)": "official"
-};
-
-const originalText = {};
-const originalPlaceholders = {};
-
-Object.keys(textMap).forEach(selector => {
-  const element = document.querySelector(selector);
-  if (element) {
-    originalText[selector] =
-      element.tagName === "INPUT" || element.tagName === "TEXTAREA"
-        ? ""
-        : element.textContent;
-    if (element.placeholder !== undefined) {
-      originalPlaceholders[selector] = element.placeholder;
-    }
-  }
-});
-
-function changeLanguage(lang) {
-  const dictionary = translations[lang];
-
-  document.documentElement.lang = lang;
-
-  Object.keys(textMap).forEach(selector => {
-    const element = document.querySelector(selector);
-    if (!element) return;
-
-    const key = textMap[selector];
-
-    if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-      element.placeholder =
-        lang === "hi"
-          ? dictionary[key]
-          : originalPlaceholders[selector] || "";
-    } else {
-      element.textContent =
-        lang === "hi"
-          ? dictionary[key]
-          : originalText[selector];
-    }
-  });
-
-  const topic = document.getElementById("topic");
-  const selectedTopic = topic.selectedIndex;
-
-  topic.options[0].textContent = dictionary.general;
-  topic.options[1].textContent = dictionary.suggestion;
-  topic.options[2].textContent = dictionary.activity;
-  topic.selectedIndex = selectedTopic;
-
-  document.querySelector(".logo").innerHTML =
-    lang === "hi"
-      ? "उमेश प्रसाद <span>यादव</span>"
-      : 'UMESH PRASAD <span>YADAV</span>';
-
-  localStorage.setItem("preferredLanguage", lang);
+document.getElementById("year").textContent=new Date().getFullYear();
+const languageSelect=document.getElementById("languageSelect");
+function setLanguage(lang){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-en][data-hi]").forEach(el=>{el.textContent=el.getAttribute("data-"+lang)});
+ document.getElementById("brandName").innerHTML=lang==="hi"?'टीम उमेश प्रसाद <span>यादव</span>':'TEAM UMESH PRASAD <span>YADAV</span>';
+ languageSelect.value=lang;
+ try{localStorage.setItem("preferredLanguage",lang)}catch(e){}
 }
-
-const languageSelect = document.getElementById("languageSelect");
-
-languageSelect.addEventListener("change", function() {
-  changeLanguage(this.value);
-});
-
-const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
-languageSelect.value = savedLanguage;
-changeLanguage(savedLanguage);
-
-document.getElementById("messageForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const content =
-    "Name: " + document.getElementById("name").value.trim() + "\n" +
-    "Topic: " + document.getElementById("topic").selectedOptions[0].text + "\n\n" +
-    "Message: " + document.getElementById("message").value.trim();
-
-  const blob = new Blob([content], {
-    type: "text/plain;charset=utf-8"
-  });
-
-  const link = document.createElement("a");
-  const url = URL.createObjectURL(blob);
-
-  link.href = url;
-  link.download = "public-message.txt";
-  link.click();
-
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-
-  alert(
-    languageSelect.value === "hi"
-      ? "टेक्स्ट फाइल तैयार हो गई है। आपका संदेश ऑनलाइन नहीं भेजा गया है।"
-      : "A text file has been prepared. Your message has not been sent."
-  );
-});
-<script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-
-const translations = {
-  en: {
-    home: "Home",
-    about: "About",
-    services: "Public Service",
-    news: "Updates",
-    gallery: "Gallery",
-    contact: "Contact",
-    badge: "PUBLIC SERVICE • COMMUNITY DEVELOPMENT",
-    headline: "Working Together for a Better Tomorrow",
-    intro: "Welcome to the official website of Umesh Prasad Yadav. Explore community initiatives, public activities and ways to connect.",
-    explore: "Explore Public Service",
-    contactUs: "Contact Us",
-    aboutTitle: "About Umesh Prasad Yadav",
-    introduction: "Introduction",
-    commitment: "A Commitment to Public Service",
-    aboutText: "This website shares information about Umesh Prasad Yadav, public activities and community initiatives. A detailed biography can be added using verified information.",
-    focus: "Our Focus",
-    focusText: "Community engagement, understanding public concerns, sharing useful information and supporting local development.",
-    community: "Community",
-    publicService: "Public Service",
-    support: "Public Support",
-    supportText: "Information and assistance for community members.",
-    development: "Local Development",
-    developmentText: "Updates about local initiatives and development activities.",
-    publicUpdates: "Public Updates",
-    publicUpdatesText: "Verified information about meetings, events and activities.",
-    activities: "News & Activities",
-    newsText: "Verified news, event announcements and community updates will appear here.",
-    memories: "Memories",
-    galleryTitle: "Photo & Video Gallery",
-    activitiesGallery: "Community Activities",
-    meetings: "Public Meetings",
-    events: "Social Events",
-    galleryNote: "Sample gallery sections. Add approved photographs when available.",
-    connect: "Connect",
-    contactTitle: "Contact & Public Suggestions",
-    prepare: "Prepare a Message",
-    yourName: "Your Name",
-    enterName: "Enter your name",
-    topic: "Topic",
-    general: "General Enquiry",
-    suggestion: "Public Suggestion",
-    activity: "Community Activity",
-    message: "Message",
-    writeMessage: "Write your message",
-    prepareButton: "Prepare Message",
-    formNote: "This demo prepares a text file. It does not send or store your message online.",
-    contactInfo: "Contact Information",
-    location: "Location: Nonaura, East Champaran, Bihar, India",
-    phone: "Phone: Add verified contact number",
-    email: "Email: Add verified email address",
-    footer: "Public Service • Community Engagement • Development",
-    official: "Official Website"
-  },
-
-  hi: {
-    home: "होम",
-    about: "परिचय",
-    services: "जनसेवा",
-    news: "अपडेट",
-    gallery: "गैलरी",
-    contact: "संपर्क",
-    badge: "जनसेवा • सामुदायिक विकास",
-    headline: "बेहतर कल के लिए मिलकर काम करें",
-    intro: "उमेश प्रसाद यादव की आधिकारिक वेबसाइट पर आपका स्वागत है। यहाँ सामाजिक गतिविधियों, जनसेवा और संपर्क की जानकारी प्राप्त करें।",
-    explore: "जनसेवा देखें",
-    contactUs: "संपर्क करें",
-    aboutTitle: "उमेश प्रसाद यादव का परिचय",
-    introduction: "परिचय",
-    commitment: "जनसेवा के प्रति प्रतिबद्धता",
-    aboutText: "इस वेबसाइट पर उमेश प्रसाद यादव, उनकी सार्वजनिक गतिविधियों और सामुदायिक पहलों की जानकारी उपलब्ध होगी। सत्यापित जानकारी के आधार पर विस्तृत परिचय जोड़ा जा सकता है।",
-    focus: "हमारा उद्देश्य",
-    focusText: "समुदाय से जुड़ना, जनसमस्याओं को समझना, उपयोगी जानकारी साझा करना और स्थानीय विकास में सहयोग करना।",
-    community: "समुदाय",
-    publicService: "जनसेवा",
-    support: "जनसहयोग",
-    supportText: "समुदाय के लोगों के लिए जानकारी और सहायता।",
-    development: "स्थानीय विकास",
-    developmentText: "स्थानीय पहलों और विकास कार्यों की जानकारी।",
-    publicUpdates: "जनता के लिए अपडेट",
-    publicUpdatesText: "बैठकों, कार्यक्रमों और गतिविधियों की सत्यापित जानकारी।",
-    activities: "समाचार एवं गतिविधियाँ",
-    newsText: "यहाँ सत्यापित समाचार, कार्यक्रमों की घोषणाएँ और सामाजिक गतिविधियों की जानकारी दिखाई जाएगी।",
-    memories: "यादें",
-    galleryTitle: "फोटो एवं वीडियो गैलरी",
-    activitiesGallery: "सामुदायिक गतिविधियाँ",
-    meetings: "जनसभाएँ",
-    events: "सामाजिक कार्यक्रम",
-    galleryNote: "यह गैलरी का नमूना है। उपलब्ध होने पर स्वीकृत तस्वीरें जोड़ें।",
-    connect: "जुड़ें",
-    contactTitle: "संपर्क एवं जनसुझाव",
-    prepare: "संदेश तैयार करें",
-    yourName: "आपका नाम",
-    enterName: "अपना नाम लिखें",
-    topic: "विषय",
-    general: "सामान्य पूछताछ",
-    suggestion: "जनसुझाव",
-    activity: "सामुदायिक गतिविधि",
-    message: "संदेश",
-    writeMessage: "अपना संदेश लिखें",
-    prepareButton: "संदेश तैयार करें",
-    formNote: "यह सुविधा एक टेक्स्ट फाइल तैयार करती है। आपका संदेश ऑनलाइन भेजा या संग्रहित नहीं होता।",
-    contactInfo: "संपर्क जानकारी",
-    location: "स्थान: नोनौरा, पूर्वी चंपारण, बिहार, भारत",
-    phone: "फोन: सत्यापित मोबाइल नंबर जोड़ें",
-    email: "ईमेल: सत्यापित ईमेल पता जोड़ें",
-    footer: "जनसेवा • सामुदायिक सहभागिता • विकास",
-    official: "आधिकारिक वेबसाइट"
-  }
-};
-
-const textMap = {
-  "nav a:nth-child(1)": "home",
-  "nav a:nth-child(2)": "about",
-  "nav a:nth-child(3)": "services",
-  "nav a:nth-child(4)": "news",
-  "nav a:nth-child(5)": "gallery",
-  "nav a:nth-child(6)": "contact",
-  ".badge": "badge",
-  ".hero h1": "headline",
-  ".hero div > p": "intro",
-  ".hero .btn:not(.secondary)": "explore",
-  ".hero .secondary": "contactUs",
-  "#about .heading span": "introduction",
-  "#about .heading h2": "aboutTitle",
-  "#about .box:first-child h3": "commitment",
-  "#about .box:first-child p": "aboutText",
-  "#about .box:last-child h3": "focus",
-  "#about .box:last-child p": "focusText",
-  "#services .heading span": "community",
-  "#services .heading h2": "publicService",
-  "#services .card:nth-child(1) h3": "support",
-  "#services .card:nth-child(1) p": "supportText",
-  "#services .card:nth-child(2) h3": "development",
-  "#services .card:nth-child(2) p": "developmentText",
-  "#services .card:nth-child(3) h3": "publicUpdates",
-  "#services .card:nth-child(3) p": "publicUpdatesText",
-  "#news h2": "activities",
-  "#news p": "newsText",
-  "#gallery .heading span": "memories",
-  "#gallery .heading h2": "galleryTitle",
-  ".gallery div:nth-child(1)": "activitiesGallery",
-  ".gallery div:nth-child(2)": "meetings",
-  ".gallery div:nth-child(3)": "events",
-  "#gallery + p": "galleryNote",
-  "#contact .heading span": "connect",
-  "#contact .heading h2": "contactTitle",
-  "#messageForm h3": "prepare",
-  "label[for='name']": "yourName",
-  "#name": "enterName",
-  "label[for='topic']": "topic",
-  "label[for='message']": "message",
-  "#message": "writeMessage",
-  "#messageForm button": "prepareButton",
-  "#messageForm .small": "formNote",
-  "#contact .box h3": "contactInfo",
-  "#contact .box p:nth-of-type(1)": "location",
-  "#contact .box p:nth-of-type(2)": "phone",
-  "#contact .box p:nth-of-type(3)": "email",
-  "footer p:nth-of-type(1)": "footer",
-  "footer p:nth-of-type(2)": "official"
-};
-
-const originalText = {};
-const originalPlaceholders = {};
-
-Object.keys(textMap).forEach(selector => {
-  const element = document.querySelector(selector);
-  if (element) {
-    originalText[selector] =
-      element.tagName === "INPUT" || element.tagName === "TEXTAREA"
-        ? ""
-        : element.textContent;
-    if (element.placeholder !== undefined) {
-      originalPlaceholders[selector] = element.placeholder;
-    }
-  }
-});
-
-function changeLanguage(lang) {
-  const dictionary = translations[lang];
-
-  document.documentElement.lang = lang;
-
-  Object.keys(textMap).forEach(selector => {
-    const element = document.querySelector(selector);
-    if (!element) return;
-
-    const key = textMap[selector];
-
-    if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-      element.placeholder =
-        lang === "hi"
-          ? dictionary[key]
-          : originalPlaceholders[selector] || "";
-    } else {
-      element.textContent =
-        lang === "hi"
-          ? dictionary[key]
-          : originalText[selector];
-    }
-  });
-
-  const topic = document.getElementById("topic");
-  const selectedTopic = topic.selectedIndex;
-
-  topic.options[0].textContent = dictionary.general;
-  topic.options[1].textContent = dictionary.suggestion;
-  topic.options[2].textContent = dictionary.activity;
-  topic.selectedIndex = selectedTopic;
-
-  document.querySelector(".logo").innerHTML =
-    lang === "hi"
-      ? "उमेश प्रसाद <span>यादव</span>"
-      : 'UMESH PRASAD <span>YADAV</span>';
-
-  localStorage.setItem("preferredLanguage", lang);
-}
-
-const languageSelect = document.getElementById("languageSelect");
-
-languageSelect.addEventListener("change", function() {
-  changeLanguage(this.value);
-});
-
-const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
-languageSelect.value = savedLanguage;
-changeLanguage(savedLanguage);
-
-document.getElementById("messageForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const content =
-    "Name: " + document.getElementById("name").value.trim() + "\n" +
-    "Topic: " + document.getElementById("topic").selectedOptions[0].text + "\n\n" +
-    "Message: " + document.getElementById("message").value.trim();
-
-  const blob = new Blob([content], {
-    type: "text/plain;charset=utf-8"
-  });
-
-  const link = document.createElement("a");
-  const url = URL.createObjectURL(blob);
-
-  link.href = url;
-  link.download = "public-message.txt";
-  link.click();
-
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-
-  alert(
-    languageSelect.value === "hi"
-      ? "टेक्स्ट फाइल तैयार हो गई है। आपका संदेश ऑनलाइन नहीं भेजा गया है।"
-      : "A text file has been prepared. Your message has not been sent."
-  );
-});
+languageSelect.addEventListener("change",()=>setLanguage(languageSelect.value));
+let saved="hi";try{saved=localStorage.getItem("preferredLanguage")||"hi"}catch(e){}
+setLanguage(saved);
 </script>
-
 </body>
-  </html>
+      </html>
